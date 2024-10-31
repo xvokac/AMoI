@@ -57,6 +57,8 @@ Enter the following coordinates:
 
 You can copy the input data from the [example01.csv](examples/example01.csv) file and paste it using the **Paste from Clipboard** button.
 
+It is not necessary that the last point in the table is identical to the first point, the program algorithm closes the polygon.
+
 After pressing the **Calculate** button, the graph window opens and the calculated values appear in the text window.
 
 ![graph window](images/fig3.png)
