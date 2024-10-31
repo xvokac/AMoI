@@ -43,7 +43,7 @@ Enter the coordinates of the closed polygon into the table. Enter each point of 
 * **Add Row**: Adds a new blank row to the table.
 * **Remove Selected Row**: Deletes the currently selected row. When selecting a larger area, removes only the last row.
 * **Clear Table**: Deletes the entire table.
-* **Paste from Clipboard**: Paste the coordinates copied to the clipboard. Assumes indented text format with columns separated by tabs or ";", i.e. the input data can be copied from Excel, Google Sheets, test editors, etc. The program checks the number of columns per line (must be 2) and replaces the decimal separator "," with ".".
+* **Paste from Clipboard**: Paste the coordinates copied to the clipboard. Assumes indented text format with columns separated by tabs or ";", i.e. the input data can be copied from Excel, Google Sheets, text editors, etc. The program checks the number of columns per line (must be 2) and replaces the decimal separator "," with ".".
 4.	**Calculation:**
 After entering the polygon coordinates, press the **Calculate** button. The program displays the results of the calculation in a text box and plots a graph of the polygon including the principal axes and moments of inertia. After pressing the button, it is verified that there are numerical values in the table and that the table contains at least 3 rows. If any of these conditions are not met, then the user is informed by an error message. 
 5. **Save results:**
@@ -53,14 +53,21 @@ Press the **Save to CSV** button to save in the `results.csv` file.
 
 Enter the following coordinates:
 
-![main window](images/fig2.png)
+![input data](images/fig2.png)
 
 You can copy the input data from the [example01.csv](examples/example01.csv) file and paste it using the **Paste from Clipboard** button.
 
-After pressing the Calculate button, the graph window opens and the calculated values appear in the text window.
+After pressing the **Calculate** button, the graph window opens and the calculated values appear in the text window.
 
-![main window](images/fig3.png)
-![main window](images/fig4.png)
+![graph window](images/fig3.png)
+![text window](images/fig4.png)
 
+If the input data is changed, the graph and output data will be overwritten after pressing the **Calculate** button.
 
+The output data can be saved to the `results.csv` file by pressing the **Save to CSV** button. The format of the output file is identical to [example01.csv](examples/example01.csv).
+
+It is also possible to specify a cross-section with a hole. In this case, it is best to specify several closed polygons in a row, so that the outer contour of the cross-section is entered counter-clockwise and the holes with a clockwise order of points as used in the [example02.csv](examples/example02.csv) and [example03.csv](examples/example03.csv) files.
+
+![example02](images/fig5.png)
+![example03](images/fig6.png)
 
