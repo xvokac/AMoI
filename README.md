@@ -1,6 +1,6 @@
 # AMoI
 
-Area moment of inertia (the second moment of area) and properties of plane area
+The software calculates the Area Moment of Inertia (the second moment of area) and properties of the plane area.
 
 Created for educational purposes.
 
@@ -41,11 +41,12 @@ Use the **Length unit** drop-down box to select the appropriate physical unit (m
 Enter the coordinates of the closed polygon into the table. Enter each point of the polygon in a new row. The details of the entry are described below with a description of the buttons.
 3.	**Coordinate table entry buttons:**
 * **Add Row**: Adds a new blank row to the table.
-* **Delete Row**: Deletes the currently selected row. When selecting a larger area, removes only the last row.
-* **Delete Table**: Deletes the entire table.
-* **Paste from Clipboard**: Paste the coordinates copied to the clipboard. Assumes indented text format with columns separated by tabs or ";", i.e. can be copied from Excel, Google Sheets, test editors, etc. The program checks the number of columns per line (must be 2) and replaces the decimal separator "," with ".".
+* **Remove Selected Row**: Deletes the currently selected row. When selecting a larger area, removes only the last row.
+* **Clear Table**: Deletes the entire table.
+* **Paste from Clipboard**: Paste the coordinates copied to the clipboard. Assumes indented text format with columns separated by tabs or ";", i.e. the input data can be copied from Excel, Google Sheets, test editors, etc. The program checks the number of columns per line (must be 2) and replaces the decimal separator "," with ".".
 4.	**Calculation:**
 After entering the polygon coordinates, press the **Calculate** button. The program displays the results of the calculation in a text box and plots a graph of the polygon including the principal axes and moments of inertia. After pressing the button, it is verified that there are numerical values in the table and that the table contains at least 3 rows. If any of these conditions are not met, then the user is informed by an error message. 
 5. **Save results:**
 Press the **Save to CSV** button to save in the `results.csv` file.
+
 
