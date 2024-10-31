@@ -49,4 +49,18 @@ After entering the polygon coordinates, press the **Calculate** button. The prog
 5. **Save results:**
 Press the **Save to CSV** button to save in the `results.csv` file.
 
+## Examples
+
+Enter the following coordinates:
+
+![main window](images/fig2.png)
+
+You can copy the input data from the [example01.csv](examples/example01.csv) file and paste it using the **Paste from Clipboard** button.
+
+After pressing the Calculate button, the graph window opens and the calculated values appear in the text window.
+
+![main window](images/fig3.png)
+![main window](images/fig4.png)
+
+
 
