@@ -1,0 +1,24 @@
+"Moment of Inertia Calculation"
+"Date and Time:";"31-10-2024 09:55:11"
+"Selected Unit:";"mm"
+
+"Cross-section defined by closed polygon:"
+"X [mm]";"Y [mm]"
+0.0;0.0
+1.0;0.0
+1.0;1.0
+0.0;1.5
+0.0;0.0
+
+"Results:"
+"Area A";"1.250e+00";"mm^2"
+"Centroid X-coordinate X_C";"466.667e-03";"mm"
+"Centroid Y-coordinate Y_C";"633.333e-03";"mm"
+"Moment of inertia I_x";"175.694e-03";"mm^4"
+"Moment of inertia I_y";"102.778e-03";"mm^4"
+"Deviation moment I_xy";"-25.694e-03";"mm^4"
+"Principal axis angle alpha_p";"-72.413e+00";"degrees"
+"Principal inertia I_xp";"94.633e-03";"mm^4"
+"Principal inertia I_yp";"183.839e-03";"mm^4"
+"Radius of gyration i_xp";"275.148e-03";"mm"
+"Radius of gyration i_yp";"383.499e-03";"mm"
