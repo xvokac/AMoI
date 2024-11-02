@@ -299,8 +299,8 @@ class MainWindow(QWidget):
         plt.fill(x_values, y_values, 'b', alpha=0.2)  # Fill closed area
         
         # Plot axes (arrows) at (xC, yC)
-        plt.quiver(xC, yC, arrow_x_dx, arrow_x_dy, angles='xy', scale_units='xy', scale=1, color='r', label="Axis $x_c$")  # X-axis
-        plt.quiver(xC, yC, arrow_y_dx, arrow_y_dy, angles='xy', scale_units='xy', scale=1, color='g', label="Axis $y_c$")  # Y-axis
+        plt.quiver(xC, yC, arrow_x_dx, arrow_x_dy, angles='xy', scale_units='xy', scale=1, color='r', label="Axis $x_p$")  # X-axis
+        plt.quiver(xC, yC, arrow_y_dx, arrow_y_dy, angles='xy', scale_units='xy', scale=1, color='g', label="Axis $y_p$")  # Y-axis
         
         # Plot the inertia ellipse
         plt.plot(x_rot, y_rot, label="Inertia ellipse", color='b')
