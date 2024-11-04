@@ -29,19 +29,25 @@ def to_engineering_notation(value):
     mantissa = value / (10 ** exponent)
     return f"{mantissa:.3f}e{exponent:+03d}"
 
-# Calculation of cross-sectional area and centroid
-def cal_area_centrum(x,y):
+# Calculation of cross-sectional area 
+def cal_area(x,y):
     A = 0
-    xT = 0
-    yT = 0
     # Calculate area and centroid
     for i in range(len(x) - 1):
         A += (x[i] * y[i + 1] - x[i + 1] * y[i]) / 2
-        xT += (x[i] + x[i + 1]) * (x[i] * y[i + 1] - x[i + 1] * y[i])
-        yT += (y[i] + y[i + 1]) * (x[i] * y[i + 1] - x[i + 1] * y[i])
-    xC = xT / (6 * A)
-    yC = yT / (6 * A)
-    return A, xC, yC
+    return A
+
+# Calculation of the first moment
+def cal_first_moment(x,y):
+    Sx = 0
+    Sy = 0
+    # Calculate area and centroid
+    for i in range(len(x) - 1):
+        Sy += (x[i] + x[i + 1]) * (x[i] * y[i + 1] - x[i + 1] * y[i])
+        Sx += (y[i] + y[i + 1]) * (x[i] * y[i + 1] - x[i + 1] * y[i])
+    Sx = Sx / 6
+    Sy = Sy / 6
+    return Sx, Sy
 
 def cal_MoI(x,y):
     # Calculate moments of inertia relative to the x- and y-axes
@@ -248,18 +254,27 @@ class MainWindow(QWidget):
         Perform moment of inertia calculations
         """
         # Cross-sectional area and centroid coordinates
-        A, xC, yC = cal_area_centrum(x_values, y_values)
+        A = cal_area(x_values, y_values)
+        if A <= 0:
+            QMessageBox.warning(self, "Error", "Check the input data. Calculated area is not positive.")
+            return
+        Sx, Sy = cal_first_moment(x_values, y_values)
+        xC = Sy / A
+        yC = Sx / A
         # Moments of inertia relative to the x- and y-axes where the coordinates are specified
         Ix, Iy, Ixy = cal_MoI(x_values, y_values)
 
         # Calculate centroidal moments of inertia - axes parallel to the original coordinate system
-        Ix = Ix - A * yC**2  # Using the parallel axis theorem
+        Ix = Ix - A * yC**2  # Using the parallel axis theorem (Steiner)
         Iy = Iy - A * xC**2
         Ixy = Ixy - A * xC * yC
 
         # Calculate principal central moments of inertia
         IxC, IyC, alpha = cal_cetr_MoI(Ix, Iy, Ixy)
-
+        if IxC <= 0 or IyC <= 0:
+            QMessageBox.warning(self, "Error", "Check the input data. Calculated area moment of inertia is not positive.")
+            return
+        
         # Radii of gyration
         ixc = np.sqrt(IxC / A)
         iyc = np.sqrt(IyC / A)
@@ -297,6 +312,9 @@ class MainWindow(QWidget):
         # Plot the graph
         plt.plot(x_values, y_values, '-o', label='Closed polygon')  # Line with points
         plt.fill(x_values, y_values, 'b', alpha=0.2)  # Fill closed area
+
+        for i in range(len(x_values)-1):
+            plt.text(x_values[i], y_values[i], f"{i+1}", fontsize=9)
         
         # Plot axes (arrows) at (xC, yC)
         plt.quiver(xC, yC, arrow_x_dx, arrow_x_dy, angles='xy', scale_units='xy', scale=1, color='r', label="Axis $x_p$")  # X-axis
