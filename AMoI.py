@@ -256,7 +256,7 @@ class MainWindow(QWidget):
         # Cross-sectional area and centroid coordinates
         A = cal_area(x_values, y_values)
         if A <= 0:
-            QMessageBox.warning(self, "Error", "Check the input data. Calculated area is not positive.")
+            QMessageBox.warning(self, "Error", "Check the input data. Calculated area is not a positive number.")
             return
         Sx, Sy = cal_first_moment(x_values, y_values)
         xC = Sy / A
@@ -272,7 +272,7 @@ class MainWindow(QWidget):
         # Calculate principal central moments of inertia
         IxC, IyC, alpha = cal_cetr_MoI(Ix, Iy, Ixy)
         if IxC <= 0 or IyC <= 0:
-            QMessageBox.warning(self, "Error", "Check the input data. Calculated area moment of inertia is not positive.")
+            QMessageBox.warning(self, "Error", "Check the input data. Calculated area moment of inertia is not a positive number.")
             return
         
         # Radii of gyration
