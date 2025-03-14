@@ -8,6 +8,8 @@ This script is used to calculate area moments of inertia, where the area is give
 
 ## Installation
 
+The following commands are used on Windows. On Linux or macOS, use the corresponding commands specific to those systems and their settings (e.g. use `python3` instead of `python`, etc.).
+
 Python 3.6 and higher must be installed (tested with version 3.12.2). You also need to install the packages `PyQt5`, `matplotlib` and `numpy` if they are not already installed with the command
 ```
 pip install PyQt5 matplotlib numpy
