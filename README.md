@@ -26,9 +26,9 @@ or building an executable program with the `pyinstaller` package, which is insta
 ```
 pip install pyinstaller
 ```
-The command to build the executable program is
+The command to build the executable program can be
 ```
-pyinstaller --onefile AMoI.py
+python -m PyInstaller --onefile AMoI.py
 ```
 
 ## Using the program
