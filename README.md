@@ -28,7 +28,7 @@ pip install pyinstaller
 ```
 The command to build the executable program can be
 ```
-python -m PyInstaller --onefile AMoI.py
+python -m PyInstaller AMoI.py
 ```
 
 ## Using the program
