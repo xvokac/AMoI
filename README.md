@@ -10,7 +10,7 @@ This script is used to calculate area moments of inertia, where the area is give
 
 ## Quick start
 
-If git and Python are installed, then 
+If [git](https://git-scm.com/) and [Python](https://www.python.org/) are installed, then 
 ```
 git clone https://github.com/xvokac/AMoI
 cd AMoI
